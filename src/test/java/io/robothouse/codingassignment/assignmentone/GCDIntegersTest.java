@@ -3,7 +3,10 @@ package io.robothouse.codingassignment.assignmentone;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class IntegersTest {
+/**
+ * Test class for GCDIntegers - Q1.
+ */
+public class GCDIntegersTest {
 
     @Test
     public void testCalculateGCDArray() {
