@@ -1,6 +1,9 @@
 package io.robothouse.codingassignments.assignmenttwo.DTOs;
 
-import jakarta.validation.constraints.NotNull;
+public record TypeDTO(String code, String name) {
 
-public record TypeDTO(@NotNull String code, @NotNull String name) {
+    public TypeDTO {
+        if (code == null) throw new NullPointerException("\"code\" cannot be null");
+        if (name == null) throw new NullPointerException("\"name\" cannot be null");
+    }
 }

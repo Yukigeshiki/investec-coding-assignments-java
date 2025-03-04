@@ -1,23 +1,26 @@
 package io.robothouse.codingassignments.assignmenttwo.DTOs;
 
-import jakarta.validation.constraints.NotNull;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public record AddressDTO(
-        @NotNull String id,
-        @NotNull TypeDTO type,
+        String id,
+        TypeDTO type,
         AddressLineDetailDTO addressLineDetail,
         ProvinceOrStateDTO provinceOrState,
         String cityOrTown,
         CountryDTO country,
         String postalCode,
         String suburbOrDistrict,
-        @NotNull String lastUpdated
+        String lastUpdated
 ) {
     private final static String NOT_AVAILABLE = "Not Available";
+
+    public AddressDTO {
+        if (id == null) throw new NullPointerException("\"id\" cannot be null");
+        if (type == null) throw new NullPointerException("\"type\" cannot be null");
+        if (lastUpdated == null) throw new NullPointerException("\"lastUpdated\" cannot be null");
+    }
 
     // a.
     public String prettyPrint() {
@@ -34,7 +37,7 @@ public record AddressDTO(
 
     // c.
     public String prettyPrintOfType(String typeName) {
-        if (Objects.equals(type.name(), typeName)) {
+        if (type.name().equals(typeName)) {
             return prettyPrint();
         }
         return null;
@@ -49,16 +52,16 @@ public record AddressDTO(
 
         ArrayList<String> validationErrors = new ArrayList<>(List.of());
 
-        boolean checkPostalCode = checkValidPostalCode(postalCode);
-        boolean checkCountry = country != null;
-        boolean checkAddress = addressLineDetail != null && addressLineDetail.checkValid();
-        boolean checkProvince = checkCountry && country.checkValidProvince(this);
+        boolean validPostalCode = checkValidPostalCode(postalCode);
+        boolean validCountry = country != null;
+        boolean validAddress = addressLineDetail != null && addressLineDetail.checkValid();
+        boolean validProvince = validCountry && country.checkValidProvince(this);
 
-        if (!checkPostalCode) validationErrors.add("You must include a valid postal code");
-        if (!checkCountry) validationErrors.add("You must include a country");
-        if (!checkAddress)
+        if (!validPostalCode) validationErrors.add("You must include a valid postal code");
+        if (!validCountry) validationErrors.add("You must include a country");
+        if (!validAddress)
             validationErrors.add("You must include valid address details (line 1 and/or 2 must be filled in)");
-        if (!checkProvince) validationErrors.add("You must include a province if your country is ZA");
+        if (!validProvince) validationErrors.add("You must include a province if your country is ZA");
 
         return validationErrors;
     }
