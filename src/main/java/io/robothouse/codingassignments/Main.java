@@ -1,4 +1,4 @@
-package io.robothouse.codingassignment;
+package io.robothouse.codingassignments;
 
 public class Main {
     public static void main(String[] args) {

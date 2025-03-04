@@ -1,4 +1,4 @@
-package io.robothouse.codingassignment.assignmenttwo.DTOs;
+package io.robothouse.codingassignments.assignmenttwo.DTOs;
 
 public record AddressLineDetailDTO(String line1, String line2) {
     private final static String NOT_AVAILABLE = "Not Available";

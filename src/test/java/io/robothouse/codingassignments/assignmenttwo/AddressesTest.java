@@ -1,4 +1,4 @@
-package io.robothouse.codingassignment.assignmenttwo;
+package io.robothouse.codingassignments.assignmenttwo;
 
 
 import org.junit.jupiter.api.Test;

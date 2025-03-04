@@ -1,8 +1,8 @@
-package io.robothouse.codingassignment.assignmenttwo;
+package io.robothouse.codingassignments.assignmenttwo;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.robothouse.codingassignment.assignmenttwo.DTOs.AddressDTO;
+import io.robothouse.codingassignments.assignmenttwo.DTOs.AddressDTO;
 
 import java.io.File;
 import java.io.IOException;

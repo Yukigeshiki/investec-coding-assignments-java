@@ -1,4 +1,4 @@
-package io.robothouse.codingassignment.assignmentone;
+package io.robothouse.codingassignments.assignmentone;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;

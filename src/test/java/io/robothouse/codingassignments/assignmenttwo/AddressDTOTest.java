@@ -1,6 +1,6 @@
-package io.robothouse.codingassignment.assignmenttwo;
+package io.robothouse.codingassignments.assignmenttwo;
 
-import io.robothouse.codingassignment.assignmenttwo.DTOs.*;
+import io.robothouse.codingassignments.assignmenttwo.DTOs.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

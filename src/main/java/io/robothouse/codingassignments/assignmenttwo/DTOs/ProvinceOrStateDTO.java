@@ -1,4 +1,4 @@
-package io.robothouse.codingassignment.assignmenttwo.DTOs;
+package io.robothouse.codingassignments.assignmenttwo.DTOs;
 
 import jakarta.validation.constraints.NotNull;
 

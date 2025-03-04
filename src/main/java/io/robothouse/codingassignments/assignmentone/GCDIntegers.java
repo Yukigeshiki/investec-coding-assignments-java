@@ -1,4 +1,4 @@
-package io.robothouse.codingassignment.assignmentone;
+package io.robothouse.codingassignments.assignmentone;
 
 public class GCDIntegers {
     private final int[] numbers;
