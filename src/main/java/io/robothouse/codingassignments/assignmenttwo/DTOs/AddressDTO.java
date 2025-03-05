@@ -2,6 +2,7 @@ package io.robothouse.codingassignments.assignmenttwo.DTOs;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public record AddressDTO(
         String id,
@@ -17,9 +18,9 @@ public record AddressDTO(
     private final static String NOT_AVAILABLE = "Not Available";
 
     public AddressDTO {
-        if (id == null) throw new NullPointerException("\"id\" cannot be null");
-        if (type == null) throw new NullPointerException("\"type\" cannot be null");
-        if (lastUpdated == null) throw new NullPointerException("\"lastUpdated\" cannot be null");
+        Objects.requireNonNull(id, "\"id\" cannot be null");
+        Objects.requireNonNull(type, "\"type\" cannot be null");
+        Objects.requireNonNull(lastUpdated, "\"lastUpdated\" cannot be null");
     }
 
     // a.
