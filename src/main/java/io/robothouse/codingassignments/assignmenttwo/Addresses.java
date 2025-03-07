@@ -2,7 +2,7 @@ package io.robothouse.codingassignments.assignmenttwo;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.robothouse.codingassignments.assignmenttwo.DTOs.AddressDTO;
+import io.robothouse.codingassignments.assignmenttwo.Models.Address;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Addresses {
-    private final ArrayList<AddressDTO> addressList;
+    private final ArrayList<Address> addressList;
 
     public Addresses(String path) throws IOException {
         this.addressList = new ObjectMapper().readValue(new File(path), new TypeReference<>() {
@@ -19,7 +19,7 @@ public class Addresses {
 
     // b.
     public void prettyPrintAddresses() {
-        for (AddressDTO addr : addressList) {
+        for (Address addr : addressList) {
             addr.prettyPrint();
         }
     }
@@ -29,7 +29,7 @@ public class Addresses {
 
         ArrayList<String> errStringList = new ArrayList<>(List.of());
 
-        for (AddressDTO addr : addressList) {
+        for (Address addr : addressList) {
             ArrayList<String> validationErrors = addr.validate();
 
             if (!validationErrors.isEmpty()) {

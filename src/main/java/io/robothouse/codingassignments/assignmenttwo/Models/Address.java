@@ -1,23 +1,23 @@
-package io.robothouse.codingassignments.assignmenttwo.DTOs;
+package io.robothouse.codingassignments.assignmenttwo.Models;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public record AddressDTO(
+public record Address(
         String id,
-        TypeDTO type,
-        AddressLineDetailDTO addressLineDetail,
-        ProvinceOrStateDTO provinceOrState,
+        Type type,
+        AddressLineDetail addressLineDetail,
+        ProvinceOrState provinceOrState,
         String cityOrTown,
-        CountryDTO country,
+        Country country,
         String postalCode,
         String suburbOrDistrict,
         String lastUpdated
 ) {
     private final static String NOT_AVAILABLE = "Not Available";
 
-    public AddressDTO {
+    public Address {
         Objects.requireNonNull(id, "\"id\" cannot be null");
         Objects.requireNonNull(type, "\"type\" cannot be null");
         Objects.requireNonNull(lastUpdated, "\"lastUpdated\" cannot be null");

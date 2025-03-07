@@ -1,15 +1,15 @@
-package io.robothouse.codingassignments.assignmenttwo.DTOs;
+package io.robothouse.codingassignments.assignmenttwo.Models;
 
 import java.util.Objects;
 
-public record CountryDTO(String code, String name) {
+public record Country(String code, String name) {
 
-    public CountryDTO {
+    public Country {
         Objects.requireNonNull(code, "\"code\" cannot be null");
         Objects.requireNonNull(name, "\"name\" cannot be null");
     }
 
-    public boolean checkValidProvince(AddressDTO address) {
+    public boolean checkValidProvince(Address address) {
         if (code.equals("ZA")) {
             return address.provinceOrState() != null;
         }

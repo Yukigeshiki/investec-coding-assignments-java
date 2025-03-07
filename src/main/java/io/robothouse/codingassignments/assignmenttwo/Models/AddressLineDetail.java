@@ -1,6 +1,6 @@
-package io.robothouse.codingassignments.assignmenttwo.DTOs;
+package io.robothouse.codingassignments.assignmenttwo.Models;
 
-public record AddressLineDetailDTO(String line1, String line2) {
+public record AddressLineDetail(String line1, String line2) {
     private final static String NOT_AVAILABLE = "Not Available";
 
     public String getPrettyPrinting() {
