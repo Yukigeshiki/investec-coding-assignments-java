@@ -20,7 +20,7 @@ public class Addresses {
     // b.
     public void prettyPrintAddresses() {
         for (Address addr : addressList) {
-            addr.prettyPrint();
+            System.out.println(addr);
         }
     }
 

@@ -23,25 +23,22 @@ public record Address(
         Objects.requireNonNull(lastUpdated, "\"lastUpdated\" cannot be null");
     }
 
-    // a.
-    public String prettyPrint() {
-        String prettyAddr = type.name() + ": " +
+    // a
+    @Override
+    public String toString() {
+        return type.name() + ": " +
                 (addressLineDetail != null ? addressLineDetail.getPrettyPrinting() : NOT_AVAILABLE) + " " +
                 "- " + (cityOrTown != null ? cityOrTown : NOT_AVAILABLE) + " " +
                 "- " + (provinceOrState != null ? provinceOrState.name() : NOT_AVAILABLE) + " " +
                 "- " + (postalCode != null ? postalCode : NOT_AVAILABLE) + " " +
                 "- " + (country != null ? country.name() : NOT_AVAILABLE);
-
-        System.out.println(prettyAddr);
-        return prettyAddr;
     }
 
     // c.
-    public String prettyPrintOfType(String typeName) {
+    public void prettyPrintOfType(String typeName) {
         if (type.name().equals(typeName)) {
-            return prettyPrint();
+            System.out.println(this);
         }
-        return null;
     }
 
     // d.
