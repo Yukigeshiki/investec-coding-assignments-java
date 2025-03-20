@@ -23,7 +23,7 @@ public record Address(
         Objects.requireNonNull(lastUpdated, "\"lastUpdated\" cannot be null");
     }
 
-    // a
+    // a.
     @Override
     public String toString() {
         return type.name() + ": " +
@@ -55,6 +55,7 @@ public record Address(
         boolean validAddress = addressLineDetail != null && addressLineDetail.checkValid();
         boolean validProvince = validCountry && country.checkValidProvince(this);
 
+        // independent checks
         if (!validPostalCode) validationErrors.add("You must include a valid postal code");
         if (!validCountry) validationErrors.add("You must include a country");
         if (!validAddress)
