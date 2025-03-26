@@ -1,7 +1,6 @@
 package io.robothouse.codingassignments.assignmenttwo.Models;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public record Address(
@@ -47,8 +46,7 @@ public record Address(
     }
 
     public ArrayList<String> validate() {
-
-        ArrayList<String> validationErrors = new ArrayList<>(List.of());
+        ArrayList<String> validationErrors = new ArrayList<>();
 
         boolean validPostalCode = checkValidPostalCode(postalCode);
         boolean validCountry = country != null;

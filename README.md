@@ -24,4 +24,4 @@ Investec Bank coding assignments done in Java.
 
    e. For each Address in the attached file, determine if it is valid or not, and if not give an indication of what is invalid in a message format of your choice.
 
-To test the solutions just run `./gradlew clean build`.
+To test the solutions just run `./gradlew clean check`.

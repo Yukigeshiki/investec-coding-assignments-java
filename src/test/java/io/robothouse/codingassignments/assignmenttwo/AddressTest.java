@@ -47,7 +47,7 @@ public class AddressTest {
     }
 
     @Test
-    public void prettyPrintOfTypeExecutesPrettyPrintWhenTypeMatches() {
+    public void testPrettyPrintOfTypeWithMatchingType() {
         Type type = new Type("1", "Home");
         AddressLineDetail addressLineDetail = new AddressLineDetail("123 Main St", "Apt 4B");
         ProvinceOrState provinceOrState = new ProvinceOrState("CA", "California");
@@ -66,7 +66,7 @@ public class AddressTest {
     }
 
     @Test
-    public void prettyPrintOfTypeDoesNotExecutePrettyPrintWhenTypeDoesNotMatch() {
+    public void testPrettyPrintOfTypeWithNonMatchingType() {
         Type type = new Type("1", "Home");
         AddressLineDetail addressLineDetail = new AddressLineDetail("123 Main St", "Apt 4B");
         ProvinceOrState provinceOrState = new ProvinceOrState("CA", "California");
@@ -82,7 +82,6 @@ public class AddressTest {
         System.setOut(originalOut);
         assertEquals("", outContent.toString());
     }
-
 
     @Test
     public void testIsValidWithAllFields() {

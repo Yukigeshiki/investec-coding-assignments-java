@@ -7,7 +7,6 @@ import io.robothouse.codingassignments.assignmenttwo.Models.Address;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Addresses {
     private final ArrayList<Address> addressList;
@@ -26,15 +25,14 @@ public class Addresses {
 
     // e.
     public ArrayList<String> validateAddresses() {
-
-        ArrayList<String> errStringList = new ArrayList<>(List.of());
+        ArrayList<String> errStringList = new ArrayList<>();
 
         for (Address addr : addressList) {
             ArrayList<String> validationErrors = addr.validate();
 
             if (!validationErrors.isEmpty()) {
-                String errString =
-                        String.format("Address for ID: %s is invalid. Validation errors: %s", addr.id(), validationErrors);
+                String errString = String.format(
+                        "Address for ID: %s is invalid. Validation errors: %s", addr.id(), validationErrors);
                 System.out.println(errString);
                 errStringList.add(errString);
             }
